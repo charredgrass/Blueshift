@@ -15,7 +15,6 @@ void setup() {
 // Constant that maps the phyical pin to the joystick button.
 const int pinToButtonMap = 9;
 const int numButts = 4;
-
 // Last state of the button
 int lastButtonState[numButts] = {0, 0, 0, 0};
 
