@@ -3,6 +3,12 @@ const int TEN = 10;
 const int ELEVEN = 11;
 const int THIRTEEN = 13;
 
+const int DELAY = 1000;
+
+
+bool flashState = false;
+
+
 void setup() {
   pinMode(NINE, OUTPUT);
   pinMode(TEN, OUTPUT);
@@ -26,7 +32,9 @@ void loop() {
   } else if (inBetween(distance, 1.0, 2.5)) {
     setRGB(0, 255, 0);
   } else if (inBetween(distance, 2.5, 4)) {
-    setRGB(0, 255, propRange255(2.5, 4, distance));
+    setRGB(0, 255, 233);
+  } else if (inBetween(distance, 4, 5)) {
+    setRGB(0, 0, 255);
   }
 }
 
@@ -44,4 +52,3 @@ int propRange255(float low, float high, float val) {
   float thing = (val - low) / (high - low);
   return (int) (thing * 255);
 }
-
