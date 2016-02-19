@@ -21,7 +21,6 @@ const int numButts = 4;
 int lastButtonState[numButts] = {0, 0, 0, 0};
 
 void loop() {
-
   // Read pin values
   for (int index = 0; index < numButts; index++)
   {
@@ -32,6 +31,7 @@ void loop() {
       lastButtonState[index] = currentButtonState;
     }
   }
-
+  Joystick.setXAxis(analogRead(A0) - 128);
+  Joystick.setYAxis(analogRead(A1) - 128);
   delay(50);
 }
