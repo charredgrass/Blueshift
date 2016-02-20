@@ -6,6 +6,8 @@ void setup() {
   pinMode(10, INPUT_PULLUP);
   pinMode(11, INPUT_PULLUP);
   pinMode(12, INPUT_PULLUP);
+  pinMode(A0, INPUT);
+  pinMode(A1, INPUT);
   Serial.begin(9600);
   Serial.println("Initializing Blueshift.");
   // Initialize Joystick Library
@@ -15,12 +17,10 @@ void setup() {
 // Constant that maps the phyical pin to the joystick button.
 const int pinToButtonMap = 9;
 const int numButts = 4;
-
 // Last state of the button
 int lastButtonState[numButts] = {0, 0, 0, 0};
 
 void loop() {
-
   // Read pin values
   for (int index = 0; index < numButts; index++)
   {
@@ -31,6 +31,7 @@ void loop() {
       lastButtonState[index] = currentButtonState;
     }
   }
-
+  Joystick.setXAxis(analogRead(A0) - 128);
+  Joystick.setYAxis(analogRead(A1) - 128);
   delay(50);
 }
