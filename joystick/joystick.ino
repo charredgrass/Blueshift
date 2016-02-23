@@ -19,7 +19,7 @@ void setup() {
   pinMode(A0, INPUT);
   pinMode(A1, INPUT);
 
-  pinMode(13, OUTPUT);
+  pinMode(13, OUTPUT); //onboard LED
   Serial.begin(9600);
   Serial.println("Initializing Blueshift.");
   // Initialize Joystick Library
