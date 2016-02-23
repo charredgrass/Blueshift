@@ -12,7 +12,7 @@ void setup() {
   pinMode(7, INPUT_PULLUP); //release
   pinMode(8, INPUT_PULLUP); //missiles
   pinMode(9, INPUT_PULLUP); //launch init
-  pinMode(10, INPUT_PULLUP); 
+  pinMode(10, INPUT_PULLUP);
   pinMode(11, INPUT_PULLUP);
   pinMode(12, INPUT_PULLUP);
 
@@ -30,7 +30,7 @@ void setup() {
 const int pinToButtonMap = 0;
 const int numButts = 13;
 // Last state of the button
-int lastButtonState[numButts] = {0, 0, 0, 0};
+int lastButtonState[numButts] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 void loop() {
   // Read pin values
